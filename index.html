@@ -56,7 +56,7 @@
                     <p>How is this presentation structured?</p>
                     <ol style="width: 50%;">
                         <li>Goals</li>
-                        <li>Background</li>
+                        <li>Background and Implementation</li>
                         <li>Testing</li>
                         <li>Results</li>
                         <li>Conclusion</li>
@@ -144,9 +144,9 @@
                     <section>
                         <h3>Transferability Approach</h3>
                         <ul>
-                            <li class="fragment">Behaviours <span class="fragment"><br/><i>(Examples: mean height, distance, changes of orientation)</i></span></li>
-                            <li class="fragment">Disparity Value</li>
-                            <li class="fragment">Surrogate model</li>
+                            <li>Behaviours <span><br/><i>(Examples: mean height, distance, changes of orientation)</i></span></li>
+                            <li>Disparity Value</li>
+                            <li>Surrogate model</li>
                         </ul>
 
                         <aside class="notes">
@@ -174,7 +174,7 @@
                         <ul>
                             <li>Developed by the ROBIN-group at UiO</li>
                             <li>Based on NVidia PhysX</li>
-                            <li class="fragment" style="list-style:none;"><img src="/img/simulation.png" /></li>
+                            <li style="list-style:none;"><img src="/img/simulation.png" /></li>
                         </ul>
                     </section>
                     <section>
@@ -249,10 +249,10 @@
                     <section>
                         <h3>Step by step verification</h3>
                         <ol>
-                            <li class="fragment">The GA framework produces viable gaits</li>
-                            <li class="fragment">Similarity of the simulated and physical model</li>
-                            <li class="fragment">Using controller with the real robot</li>
-                            <li class="fragment">Compare results with and without Transferability Approach</li>
+                            <li>The GA framework produces viable gaits</li>
+                            <li>Similarity of the simulated and physical model</li>
+                            <li>Using controllers on the real robot</li>
+                            <li>Comparison results with and without Transferability Approach</li>
                         </ol>
 
                         <aside class="notes">
@@ -284,51 +284,92 @@
                         </div>
                     </section>
                     <section>
-                        <h3>Using controller with the real robot</h3>
+                        <h3>Using controllers on the real robot</h3>
                         <div>
                             <img src="/img/gait_60_00_control_2s.png" style="width: 45%;" />
                             <img src="/img/gait_60_00_control_2s_real.jpg" style="width: 45%;" />
                         </div>
+                        <small>Positions of the robot in simulation and reality after 2s</small>
 
                         <aside class="notes">
                             <p>Comparison of gaits after 2s and 8s</p>
                         </aside>
                     </section>
+
                     <section>
-                        <h3>Compare results with and without Transferability Approach</h3>
+                        <h3>Comparison of results with and without Transferability Approach</h3>
                     </section>
                     <section>
                         <p>1st iteration</p>
-                        <img src="/img/transfer_001_distances.png" style="background: #eee;" />
+                        <img src="/img/transfer_001_distances.png" style="background: #eee; width: 50%;" />
                     </section>
                     <section>
                         <p>2nd iteration</p>
-                        <img src="/img/transfer_002_distances.png" style="background: #eee;" />
+                        <img src="/img/transfer_002_distances.png" style="background: #eee; width: 50%;" />
                     </section>
                     <section>
                         <p>3rd iteration</p>
-                        <img src="/img/transfer_003_distances.png" style="background: #eee;" />
+                        <img src="/img/transfer_003_distances.png" style="background: #eee; width: 50%;" />
                     </section>
                     <section>
                         <p>4th iteration</p>
-                        <img src="/img/transfer_004_distances.png" style="background: #eee;" />
+                        <img src="/img/transfer_004_distances.png" style="background: #eee; width: 50%;" />
                     </section>
 
                     <section>
                         <h3>Why?</h3>
-                        <ul class="fragment">
-                            <li>Not entirely correct application of Transferability Approach</li>
+                    </section>
+                    <section>
+                        <ul>
+                            <li>Not entirely correct implementation of Transferability Approach</li>
                             <li>Wrong choice of behaviours</li>
-                            <li>Wrong choice of SVM-parameters</li>
-                            <li></li>
+                            <li>Questionable choice of SVM-parameters</li>
+                            <li>Additionally...</li>
                         </ul>
+
+                        <aside class="notes">
+                            <p>Behaviours used: distance moved, sum of orienatation changes, direction moved</p>
+                        </aside>
+                    </section>
+
+                    <section>
+                        <h4>Aracna</h4>
+                        <p>Small changes in controller and behaviours lead to big changes in how the gaits perform.</p>
                     </section>
                 </section>
 
                 <!-- SUMMARY -->
 
                 <section>
-                    <h2>Summary</h2>
+                    <section>
+                        <h2>Conclusion</h2>
+                        <ul>
+                            <li>A simple model of Aracna was created, tested and evaluated, both in simulation and reality</li>
+                            <li>Application of Transferability Approach did not yield expected results</li>
+                            <li>...but a lot of work remains to be done</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <p>Aracna might not have been the best choice for this project.</p>
+                    </section>
+                </section>
+
+                <section>
+                    <h2>Future work</h2>
+                    <ul>
+                        <li>Improve model of Aracna</li>
+                        <li>Transfer experiments with other robots</li>
+                        <li>Test different behaviours</li>
+                        <li>Local search</li>
+                    </ul>
+
+                    <aside class="notes">
+                        <p>Model of Aracna:</p>
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Thank you for your time!</h2>
                 </section>
 			</div>
 		</div>
@@ -345,6 +386,7 @@
 				progress: true,
 				history: true,
 				center: true,
+                slideNumber: true,
 
 				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
 				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
